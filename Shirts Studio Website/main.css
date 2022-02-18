@@ -34,6 +34,19 @@
   border-radius: 10px;
 }
 
+#close {
+  background: rgb(221, 17, 17);
+  color: white;
+}
+
+#email-alert {
+  display: none;
+}
+
+#password-alert {
+  display: none;
+}
+
 /* navbar */
 .nav-menu {
   display: flex;
