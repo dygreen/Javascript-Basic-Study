@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if/else, function</title>
+  </head>
+  <body>
+    <script>
+      // Q1. 369 Game
+      function Game(num) {
+        if (num % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+
+      Game(1);
+      Game(3);
+
+      // Q2. 369 Game Upgrade (9의 배수에서 박수 두번)
+      function Game2(num) {
+        if (num % 3 == 0) {
+          console.log("박수");
+          if (num % 9 == 0) {
+            console.log("박수x2");
+          }
+        } else {
+          console.log("통과");
+        }
+      }
+
+      Game2(6);
+      Game2(9);
+      Game2(11);
+      Game2(18);
+
+      // else if문 활용하기
+      function Game3(num) {
+        if (num % 9 == 0) {
+          console.log("박수x2");
+        } else if (num % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+
+      Game3(6);
+      Game3(9);
+      Game3(11);
+      Game3(18);
+
+      // Q3. 공인중개사 시험은 2개 과목이 있음. 과목마다 100점 만점.
+      // 두 과목 합해서 120점 이상이면 합격. 다만 한 과목이 40점 미만이면 불합격.
+      // 시험점수를 입력하면 합격인지 알려주는 함수 만들기
+      function test(test1, test2) {
+        if (test1 + test2 > 120 && test1 > 40 && test2 > 40) {
+          console.log("합격");
+        } else {
+          console.log("불합격");
+        }
+      }
+
+      test(70, 70);
+      test(30, 100);
+      test(50, 50);
+
+      function test2(a, b) {
+        if (a > 100 || b > 100) {
+          alert("장난치지 마시오");
+        } else if (a < 40 || b < 40) {
+          console.log("불합격");
+        } else if (a + b >= 120) {
+          console.log("합격");
+        } else {
+          console.log("불합격");
+        }
+      }
+    </script>
+  </body>
+</html>
