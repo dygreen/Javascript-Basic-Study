@@ -1,0 +1,15 @@
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-size: 30px;
+}
+
+.bg-dark {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+}
