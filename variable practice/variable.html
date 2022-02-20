@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="answer" />
+    <button id="send-answer">제출</button>
+
+    <script>
+      // Q1. 변수 만들기) 나이와 출신 지역을 변수에 저장하기
+      let age = 26;
+      const birthPlace = "seoul";
+
+      // Q2. 왜 이 변수는 동작하지 않는가?
+      var name = "park";
+      var id = 0;
+
+      function showName() {
+        var name = "kim";
+        var id = 1;
+        console.log(name); // console에 kim이 출력
+      }
+
+      showName();
+      console.log(id); // 0이 출력
+      console.log(name); // park이 출력됨
+      // 함수 안에서 변수를 만들면 사용 가능 범위는 '함수 내부'
+      // let도 함수 밖 변수와 동일한 이름의 변수를 {} 안에서 재선언 가능. {} 밖에서만 불가능
+      // var는 함수 밖이든 안이든 동일한 이름의 변수 재선언 가능
+      // var hoisting = 어디에 선언했느냐에 상관없이 항상 제일 위로 선언을 끌어올려 주는 것
+
+      // Q3. 이자율 계산
+      //철수는 은행에 예금을 하러 갔는데 예금 금액에 따라 이율이 달라지는 것을 보고 크게 당황했습니다.
+      // 첫 예금액이 5만원 미만이면 이율이 연 15퍼센트,
+      // 첫 예금액이 5만원 이상이면 이율이 연 20퍼센트라고 합니다.
+      // 그래서 민준이는
+      // (1) 변수에 예금액을 넣으면
+      // (2) 2년 후의 총 예금액을 자동으로 콘솔창에 출력해주는 기능을 자바스크립트로 만들려고하는데
+      // 어떻게 코드를 짜면 될까요?
+      let 예금액 = 10000;
+      let 미래예금액 = 0;
+
+      if (예금액 >= 50000) {
+        미래예금액 = 예금액 * 1.2 ** 2;
+      } else {
+        미래예금액 = 예금액 * 1.15 * 1.15;
+      }
+
+      console.log(미래예금액);
+
+      // Q4. 커피 리필을 이상하게 해주는 곳이 있습니다. 최대한 마실 수 있는 커피양을 계산해봅시다.
+      // 방금 마신 커피의 3분의 2만큼 총 2번 리필해주는 카페가 있습니다.
+      // 예를 들면 처음 커피를 90ml 주문하면 첫 리필은 60ml를 해주며, 그 다음 리필은 40ml를 해주는 카페입니다.
+      // 그럼 처음 주문한 커피 양에 따라서 최대한 마실 수 있는 커피를 콘솔창에 계산해주는 코드를 작성해봅시다.
+      // 90 + 90%3*2 + 60%3*2
+      // 첫주문 + 첫주문%3*2(두번째 주문) + 두번째주문%3*2
+
+      let first = 360;
+      let twice = (first / 3) * 2;
+      let third = (twice / 3) * 2;
+      let refill = 0;
+
+      refill = first + twice + third;
+      console.log(refill);
+
+      // Q5. 간단한 퀴즈 (태조 이성계)
+      //    유저가 <input>에 답을 적고 제출버튼을 누를 수 있는 퀴즈 UI 입니다.
+      // 1. 유저가 답을 맞추면 alert('성공');
+      // 2. 유저가 답을 3번 찍어서 못맞추면 alert('실패') 를 띄워봅시다.
+      // 문제의 답: 1335
+      let answer = 1335;
+      let count = 0;
+
+      $("#send-answer").on("click", () => {
+        count++;
+        if ($("#answer").val() == answer) {
+          alert("성공");
+        } else if (count >= 3) {
+          alert("실패");
+        }
+      });
+    </script>
+  </body>
+</html>
