@@ -12,13 +12,20 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="main.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <script 
+        src="https://kit.fontawesome.com/de745c8c9f.js"
+        crossorigin="anonymous"
+        ></script>
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"
   ></script>
-    <title>Hello, world!</title>
+    <title>Shirts Studio</title>
   </head>
   <body>
 
@@ -65,11 +72,31 @@
         It uses utility classes for typography and spacing to space content out
         within the larger container.
       </p>
-        <a id="login" class="btn btn-primary btn-lg" href="#" role="button">Login</a>
+        <a id="login" class="btn btn-primary btn-lg" href="#" role="button">로그인</a>
       </p>
     </div>
 
 
+    <!-- img slide -->
+    <h4 class="my-4 text-center">Showcase</h4>
+
+    <div style="overflow: hidden; position: relative;"">
+      <div class="slide-container">
+        <div class="slide-box"><img src="image/man-ge123bb66d_1920.jpg"></div>
+        <div class="slide-box"><img src="image/t-shirt-design-g7276dd706_1920.jpg" alt="#"></div>
+        <div class="slide-box"><img src="image/title-g5550167ab_1920.jpg" alt="#"></div>
+      </div>
+      <div class="side-slide"><button class="slide-next"><span class="iconify" data-icon="flat-color-icons:next"></span></button>
+        <button class="slide-prev"><span class="iconify" data-icon="flat-color-icons:previous"></span></button>
+      </div>
+      <div class="bottom-slide">
+        <button class="slide-1"><span class="iconify" data-icon="ci:dot-05-xl"></span></button>
+        <button class="slide-2"><span class="iconify" data-icon="ci:dot-05-xl"></span></button>
+        <button class="slide-3"><span class="iconify" data-icon="ci:dot-05-xl"></span></button>
+      </div>
+    </div>
+
+    <div class="my-5"></div>
     <!-- <input id="test-input"> -->
 
 
@@ -115,7 +142,8 @@
         // 이메일, 비밀번호 input 빈칸 검사기능 만들기
         // 폼이 전송될 때, 이메일 input에 입력된 값이 빈칸인 경우, 폼의 전송을 막음. 안내문을 띄움
         $('form').on('submit', (e) => {
-          if ($('#email').val() == '') {
+          let 입력한값 = document.getElementById('email').value;
+          if (입력한값 == '') {
             e.preventDefault();
             $('#email-alert').show();
             $('#password-alert').hide();
@@ -126,9 +154,52 @@
           }
         });
 
+        // 정규식 검사로 이메일 형태가 맞는지 검사하기 : /\S+@\S+\.\S+/.test('aaa@bbb.ccc')
+        // $('form').on('submit', (e) =>
+        // let 입력한값 = document.getElementById('email').value;
+        // if ( /\S+@\S+\.\S+/.test(입력한값) ){
+        //   alert('이메일형식아님')
+        //   e.preventDefault();
+        // }
+        // );
 
+        // 폼 전송시 유저가 입력한 비번에 영어 대문자가 적어도 1개 있는지 검사해봅시다.
+        // 없으면 alert() 띄우기
+          // $('form').on('submit', (e) => {
+          //   if (/[A-Z]/.test($('#password').val()) == true){
+          //     alert('강력한 비밀번호입니다');
+          //   }
+          // }
+          // );
+          
+
+        // 이미지 슬라이드: 하단 버튼
+        // 2번을 클릭했을때 2번 이미지가 나오도록 등등
+        $('.slide-2').click(() => $('.slide-container').css('transform', 'translateX(-100vw)'));
+        $('.slide-3').click(() => $('.slide-container').css('transform', 'translateX(-200vw)'));
+        $('.slide-1').click(() => $('.slide-container').css('transform', 'translateX(0vw)'));
+
+        // next, prev 버튼
+        let nowShowingPic = 1;
+
+        $(".slide-next").click(() => {
+          if (nowShowingPic < 3) {
+            $(".slide-container").css("transform", 'translateX(-' + nowShowingPic + '00vw)');
+            nowShowingPic++;
+          }
+        });
+
+        // prev을 눌렀을때
+        // 만약 지금보이는 사진이 3이면 사진 2이 보이고,
+        // 만약 지금보이는 사진이 2이면 사진 1이 보이고,
+      
+        $('.slide-prev').click(() => {
+          if (nowShowingPic > 1) {
+            $(".slide-container").css("transform", 'translateX(-' + (nowShowingPic - 2) + '00vw)');
+            nowShowingPic--;
+          }
+        });
 
     </script>
-
   </body>
 </html>
