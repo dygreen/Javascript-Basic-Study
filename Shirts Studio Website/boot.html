@@ -47,6 +47,7 @@
         </div>
     </div>
 
+
     <!-- navbar -->
     <div class="nav-menu">
       <div class="large-logo">Shirts Studio</div>
@@ -58,6 +59,7 @@
       <li class="list-group-item">Inner</li>
       <li class="list-group-item">Shirts</li>
     </ul>
+
 
     <!-- jumbotron  -->
     <div class="jumbotron main-background">
@@ -103,9 +105,9 @@
     <!-- Tap  -->
     <div class="container mt-5">
       <ul class="list">
-        <li class="tab-button">Products</li>
-        <li class="tab-button active">Information</li>
-        <li class="tab-button">Shipping</li>
+        <li class="tab-button" data-id="0">Products</li>
+        <li class="tab-button active" data-id="1">Information</li>
+        <li class="tab-button" data-id="2">Shipping</li>
       </ul>
     
       <div class="tab-content">
@@ -236,21 +238,40 @@
           }
         });
 
-        // 버튼0 (product)을 누르면
+        // 1) 버튼0 (product)을 누르면
         // 0. 모든 버튼의 주황색 하이라이트 제거 + 내용도 제거
         // 1. 버튼0이 주황색으로 하이라이트 되어야 함
         // 2. 내용0이 보여야함
         // + for 반복문 처리
-        for (let i = 0; i < $('.tab-button').length; i++) {
-          $(".tab-button")
-            .eq(i)
-            .click(() => {
-              $('.tab-button').removeClass('active');
+        // for (let i = 0; i < $('.tab-button').length; i++) {
+        //   $(".tab-button")
+        //     .eq(i)
+        //     .click(() => {
+        //       tapOpen(i)
+        //   });
+        // }
+
+
+        // 1-1) 이벤트리스너 - 이벤트 함수 활용해 처리
+        // 실제로 클릭한 것이 0이면, 0내용을 보여주세요
+        // $('.list').click((event) => {
+        //   if (event.target == document.querySelectorAll('.tab-button')[0]) {
+        //     tapOpen(0)
+        //   }
+        // });
+
+        // 1-2) .dataset 활용
+        $('.list').click((event) =>
+          tapOpen(event.target.dataset.id)
+        );
+
+        function tapOpen(i) {
+          $('.tab-button').removeClass('active');
               $('.tab-content').removeClass('show');
               $(".tab-button").eq(i).addClass("active");
               $(".tab-content").eq(i).addClass("show");
-          });
         }
+
         // $(".tab-button")
         //   .eq(1)
         //   .click(() => {
@@ -268,7 +289,13 @@
         //     $(".tab-content").eq(2).addClass("show");
         // });
 
-      
+        
+      // 검은 배경을 누르면 모달창이 닫히는 기능
+      $('.black-background').click((event) => {
+          if (event.target == event.currentTarget) {
+          $('.black-background').hide();
+          }
+      });
     </script>
   </body>
 </html>
