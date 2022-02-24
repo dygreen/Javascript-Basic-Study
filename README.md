@@ -6,6 +6,8 @@
    👉 스크롤시 변하는 Navbar, 탭 
    👉 이벤트 버블링
  - 셀렉트시 변하는 interactive form 만들기: (folder) Shirts Studio Website - boot2
+ - 쇼핑몰 상품정렬 기능 만들기(가격순/상품명/0만원이하 버튼): (folder) Shirts Studio Website - shoppingMall
  - if/else , function을 이용한 간단한 퀴즈 풀이(JS): (folder) if/else, function practice
  - if/else문을 이용한 DarkMode 구현 + setTimeout : (folder) Darkmode
  - 변수 관련 간단한 퀴즈 풀이(JS): (folder) variable practice
+ - array, for 반복문 관련 간단한 퀴즈 풀이(JS): (folder) array, for반복문 practice
