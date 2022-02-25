@@ -11,7 +11,7 @@
  - 셀렉트시 변하는 interactive form 만들기: 
    (folder) Shirts Studio Website - boot2
    
- - 쇼핑몰 상품정렬 기능 만들기(가격순/상품명/0만원이하 버튼):
+ - 쇼핑몰 상품정렬 기능 만들기(가격순/상품명/0만원이하/원래대로 ):
    (folder) Shirts Studio Website - shoppingMall
    
  - if/else , function을 이용한 간단한 퀴즈 풀이(JS):
