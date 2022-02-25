@@ -25,3 +25,9 @@
    
  - array, for 반복문 관련 간단한 퀴즈 풀이(JS): 
    (folder) array, for반복문 practice
+
+ - ajax로 '상품더보기' 버튼 만들기:
+   (folder) ajax
+   
+ - position: sticky 및 스크롤 위치에 따라 변하는 애니메이션 구현:
+   (folder) apple tv
