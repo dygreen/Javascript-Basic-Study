@@ -12,8 +12,6 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-
-    <link rel="stylesheet" href="style2.css" />
     <script
       src="https://kit.fontawesome.com/de745c8c9f.js"
       crossorigin="anonymous"
@@ -58,6 +56,7 @@
       <button class="btn btn-danger" id="sortPrice">가격순정렬</button>
       <button class="btn btn-primary" id="sortAbc">가나다순</button>
       <button class="btn btn-primary" id="filter">6만원이하</button>
+      <button class="btn btn-success" id="original">원래대로</button>
     </div>
 
     <script>
@@ -66,6 +65,7 @@
         { id: 1, price: 50000, title: "Springfield Shirt" },
         { id: 2, price: 60000, title: "Black Monastery" },
       ];
+      let products2 = [...products];
 
       // sort 함수
       //   let array = [7, 3, 5, 2, 40];
@@ -91,6 +91,15 @@
         }
       }
 
+      function dataBinding2() {
+        for (let i = 0; i < 3; i++) {
+          $(".title").eq(i).html(products2[i].title);
+          $(".price")
+            .eq(i)
+            .html("가격: " + products2[i].price);
+        }
+      }
+
       // '가나다순' 클릭하면 문자순으로 정렬
       $("#sortAbc").click(() => {
         products.sort((a, b) => {
@@ -100,7 +109,6 @@
             return +1;
           }
         });
-
         dataBinding();
       });
 
@@ -113,6 +121,12 @@
           let template = `<div>${a.title} ${a.price}</div>`;
           $(".card-group").append(template);
         });
+      });
+
+      // '원래대로' 버튼을 누르면 처음 상태로 돌아가는 것
+      // 원래대로 버튼을 누르면 products2에 있는거 넣어줘
+      $("#original").click(() => {
+        dataBinding2();
       });
     </script>
   </body>
