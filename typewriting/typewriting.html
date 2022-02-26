@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <title>Typewriting</title>
+  </head>
+  <body>
+    <div>
+      <button>버튼</button>
+      <h1>abcde</h1>
+    </div>
+
+    <script>
+      // 버튼을 누르면 0.5초에 한번 h1 내용이 바뀌어야함
+      // 버튼을 누르면 h1을 빈칸으로 만들고
+      // 0.5초 후에 h1 안에 a를 더함,
+      // 0.5초 후에 h1 안에 b를 더함,
+      // 0.5초 후에 h1 안에 c를 더함,
+      let h1Tag = document.querySelector("h1");
+      let type = document.querySelector("h1").innerHTML;
+
+      $("button").click(() => {
+        h1Tag.innerHTML = "";
+        // setTimeout(() => {
+        //   h1Tag.innerHTML = h1Tag.innerHTML + type[0]; // a=h1에 원래 있던 첫번째 글자
+        // }, 500);
+        // setTimeout(() => {
+        //   h1Tag.innerHTML = h1Tag.innerHTML + type[1];
+        // }, 1000);
+        // setTimeout(() => {
+        //   h1Tag.innerHTML = h1Tag.innerHTML + type[2];
+        // }, 1500);
+
+        // h1에 있는 숫자만큼 반복
+        for (let i = 0; i < type.length; i++) {
+          setTimeout(() => {
+            h1Tag.innerHTML = h1Tag.innerHTML + type[i];
+          }, 500 * i);
+        }
+      });
+    </script>
+  </body>
+</html>
