@@ -1,6 +1,6 @@
 # Javascript-Basic Study
 22.01.17 START!
-22.02.17~
+22.02.17~ 22.02.26
  - 간단한 옷 쇼핑 웹페이지 구현(HTML, CSS, JS): 
    (folder) Shirts Studio Website - boot
    
