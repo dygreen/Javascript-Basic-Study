@@ -7,6 +7,7 @@
    👉 로그인 모달창, carousel(이미지 슬라이드) UI 기능
    👉 스크롤시 변하는 Navbar, 탭 
    👉 이벤트 버블링
+   👉 hammer.js로 이미지 슬라이드 터치 기능 만들기
    
  - 셀렉트시 변하는 interactive form 만들기: 
    (folder) Shirts Studio Website - boot2
@@ -31,3 +32,6 @@
    
  - position: sticky 및 스크롤 위치에 따라 변하는 애니메이션 구현:
    (folder) apple tv
+   
+ - Typewriting 애니메이션 만들기
+   (folder) typewriting
