@@ -24,6 +24,8 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"
   ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha256-eVNjHw5UeU0jUqPPpZHAkU1z4U+QFBBY488WvueTm88=" crossorigin="anonymous"></script>
+
     <title>Shirts Studio</title>
   </head>
   <body>
@@ -221,6 +223,26 @@
           if (nowShowingPic > 1) {
             $(".slide-container").css("transform", 'translateX(-' + (nowShowingPic - 2) + '00vw)');
             nowShowingPic--;
+          }
+        });
+
+        // hammer.js를 이용한 터치 이미지 슬라이드
+        let image1 = document.querySelectorAll('.slide-box img')[0];
+        let maneger = new Hammer.Manager(image1); // 어떤 요소에 터치기능 개발할 건지 / manager=image1의 터치 이벤트 담당 매니저
+        maneger.add(new Hammer.Pan({thredshold: 0})); // 이걸 넣으면 바로 밑에 것이 실행 안됨..
+        maneger.on('pan', function(e){
+          console.log(e.deltaX);
+          // 만약 왼쪽으로 그림을 슬라이드 했을때 ~만큼 이동하도록
+          if( e.deltaX < -1 ) {
+            $('.slide-container').css('transform', `translateX(${e.deltaX}px)`);
+          }
+          // 만약 터치가 끝내면 두번째 사진으로 (서서히) 변해야함
+          if(e.isFinal) {
+            // 두번째 사진으로 '서서히' 변하기
+            $('.slide-container').addClass('transforming');
+            $('.slide-container').css('transform', 'translateX(-100vw)');
+            // 애니메이션이 다 동작하면 0.5초 후에 '서서히' 제거하기
+            setTimeout(() => $('.slide-container').removeClass('transforming'), 500);
           }
         });
 
