@@ -35,3 +35,7 @@
    
  - Typewriting 애니메이션 만들기
    (folder) typewriting
+   
+   > (folder)update
+   > : 함수 return값 연습
+   > : scroll 이벤트(scrollTop/scrollHeight/clientHeight...)
