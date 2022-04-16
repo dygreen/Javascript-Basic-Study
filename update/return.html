@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+
+<script>
+  // Q1. 함수에 분과 초를 차례로 파라미터로 입력하면 ms단위로 바꿔서 뱉어주는 함수
+  function msCal(min,ms){
+    let result = (min * 60 + ms)*1000;
+    return result
+  }
+  console.log(msCal(1,30));
+  console.log(msCal(2,10));
+
+  // Q2. 가격을 파라미터로 입력하면 10% 할인가를 뱉는 함수 (* 첫 구매여부를 ture/false로 판단하여, 첫 구매일 경우 1.5달러 추가 할인)
+  function sale(price,first){
+    if(first == true){
+      let result = price - (price * 0.1) - 1.5;
+      return parseFloat(result.toFixed(2)) /* 소숫점 처리 */
+    } else {
+      let result2 = price - (price * 0.1);
+      return result2
+    }
+  }
+  console.log(sale(70, false));
+  console.log(sale(10, true));
+  console.log(sale(10.3,true));
+</script>
+</html>

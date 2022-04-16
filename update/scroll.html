@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scroll 이벤트</title>
+  <script src="jquery-3.5.1.min 복사본.js"></script>
+</head>
+<body>
+  <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eligendi modi delectus commodi facere sapiente corporis. Voluptas natus explicabo laboriosam molestias exercitationem iste quas quisquam quidem ea. Repellat, quasi illum?
+    Ad perferendis qui maxime officia, unde assumenda magni alias? Ullam totam nulla illum, velit animi maiores assumenda ut asperiores quis nesciunt ratione cumque magnam, unde necessitatibus aspernatur tempore corporis omnis!
+  </div>
+</body>
+<script>
+  // div 스크롤 내린 양 == div 실제 높이일 경우, alert창 띄우기
+  $(".lorem").scroll(function(){
+    let scroll = document.querySelector(".lorem").scrollTop; /* scroll 내린 양 */
+    let height = document.querySelector(".lorem").scrollHeight; /* scroll 전체 높이 */
+    let box_height = document.querySelector(".lorem").clientHeight; /* 현재 보이는 박스 높이(loremdml height) */
+    console.log(scroll, height, box_height);
+
+    if(scroll + box_height >= height - 10){
+      alert("약관을 다 읽었습니다!");
+    }
+
+    /* 현재 페이지 스크롤 체크하는 법
+    document.documentElement.scrollHeight
+    document.querySelector("html").clientHeight
+    window.scrollY -> 현재 페이지 스크롤 양
+    */
+  })
+</script>
+</html>
