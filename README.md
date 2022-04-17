@@ -40,7 +40,5 @@
    * 함수 return값 연습
    * scroll 이벤트(scrollTop/scrollHeight/clientHeight...)
    * tab 기능 만들기
-   * select폼 
-   
-   만
-   
+   * select폼 제작
+   * 
