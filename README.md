@@ -12,7 +12,7 @@
  - 셀렉트시 변하는 interactive form 만들기: 
    (folder) Shirts Studio Website - boot2
    
- - 쇼핑몰 상품정렬 기능 만들기(가격순/상품명/0만원이하/원래대로 ):
+ - sort/map/filter를 통해 쇼핑몰 상품정렬 기능 만들기(가격순/상품명/0만원이하/원래대로):
    (folder) Shirts Studio Website - shoppingMall
    
  - if/else , function을 이용한 간단한 퀴즈 풀이(JS):
@@ -41,4 +41,4 @@
    * scroll 이벤트(scrollTop/scrollHeight/clientHeight...)
    * tab 기능 만들기
    * select폼 제작
-   * 
+   * localStorage를 통해 구매하기 버튼 클릭시 해당 제품명 장바구니 페이지에 출력하기(localStorage+cart)
