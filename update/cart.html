@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cart(localStorage)</title>
+  <script src="jquery-3.5.1.min 복사본.js"></script>
+</head>
+<body>
+  <h1>장바구니 목록</h1>
+  <h4>localStorage에서 가져옴</h4>
+</body>
+  <script>
+    // 2. localStorage에 있던 상품들 보여주기
+    let 꺼냄 = localStorage.getItem('cart');
+    let data = JSON.parse(꺼냄); /* array형태 */
+    
+    // 꺼낸 상품 갯수만큼 html 생성
+    data.forEach(function(i,a){
+      $("h4").append(`<p>${data[a]}</p>`);
+    });
+  </script>
+</html>
