@@ -44,4 +44,5 @@
    * localStorage를 통해 구매하기 버튼 클릭시 해당 제품명 장바구니 페이지에 출력하기(localStorage+cart)
  
  > (folder) ES6 - 11
-   * ES6 , ES11 문법 
+   * ES6 , ES11 문법 공부
+
