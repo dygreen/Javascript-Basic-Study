@@ -4,10 +4,10 @@
  - 간단한 옷 쇼핑 웹페이지 구현(HTML, CSS, JS): 
    (folder) Shirts Studio Website - boot
    
-   👉 로그인 모달창, carousel(이미지 슬라이드) UI 기능
-   👉 스크롤시 변하는 Navbar, 탭 
-   👉 이벤트 버블링
-   👉 hammer.js로 이미지 슬라이드 터치 기능 만들기
+   👉 로그인 모달창, carousel(이미지 슬라이드) UI 기능<br>
+   👉 스크롤시 변하는 Navbar, 탭 <br>
+   👉 이벤트 버블링<br>
+   👉 hammer.js로 이미지 슬라이드 터치 기능 만들기<br>
    
  - 셀렉트시 변하는 interactive form 만들기: 
    (folder) Shirts Studio Website - boot2
@@ -46,3 +46,15 @@
  > (folder) ES6 - 11
    * ES6 , ES11 문법 공부
 
+> (folder) goodCode
+   * 가독성있는 코드 작성법 공부
+   * Ternary Operator
+   * Nullish Coalescing Operator
+   * Object Destructuring
+   * Spread Syntax
+   * Optional Chaining
+   * Template Literals
+   * Loops
+   * Async Await
+   * Set
+  
